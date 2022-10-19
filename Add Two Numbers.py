@@ -26,4 +26,41 @@
 # 0 <= Node.val <= 9
 # It is guaranteed that the list represents a number that does not have leading zeros.
 
-
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        dummyHead = ListNode(0)
+        curr = dummyHead
+        carry =0
+        while l1!=None or l2!=None or carry!=0:
+            if l1:
+                a=l1.val
+            else:
+                a=0
+            if l2:
+                b=l2.val
+            else:
+                b=0
+            columnsum = a+b+carry
+            carry = columnsum//10
+            newNode = ListNode(columnsum % 10)
+            curr.next = newNode
+            curr =newNode
+            if l1:
+                l1=l1.next
+            else:
+                l1 = None
+            if l2:
+                l2=l2.next
+            else:
+                l2=None
+        return dummyHead.next
