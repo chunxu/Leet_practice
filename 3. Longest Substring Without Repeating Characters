@@ -28,3 +28,26 @@
 # 0 <= s.length <= 5 * 104
 # s consists of English letters, digits, symbols and spaces.
 
+class Solution(object):
+
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        if s is None or len(s) == 0:
+            return 0
+
+        max_l = 0
+        l = 0
+        pool = set()
+        for i in range(0, len(s)):
+            if s[i] in pool:
+                while s[l] != s[i]:
+                    pool.remove(s[l])
+                    l += 1
+                pool.remove(s[l])
+                l += 1
+            pool.add(s[i])
+            max_l = max(len(pool), max_l)
+        return max_l
