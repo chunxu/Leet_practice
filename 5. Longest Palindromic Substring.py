@@ -43,3 +43,6 @@ class Solution(object):
                     res = s[i:j]
                 j += 1
         return res
+
+       
+       ## comments: time limit exceeded
