@@ -31,4 +31,4 @@
 # s consists of English letters (lower-case and upper-case), ',' and '.'.
 # 1 <= numRows <= 1000
 
-# what is the meaning of the problem?
+# what is the meaning of the problem? # still not sure how to figure it out
