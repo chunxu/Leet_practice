@@ -31,5 +31,5 @@
 # s consists of English letters (lower-case and upper-case), ',' and '.'.
 # 1 <= numRows <= 1000
 
-# 1st day night burger bread + second day bread milk morning + bread sadine fish lunch + bread chicken supper + bread milk morning + bread sading fish lunch
+# 1st day night burger bread + second day bread milk morning + bread sadine fish lunch + bread chicken supper + bread milk morning + bread sading fish lunch + what suppper?
 
