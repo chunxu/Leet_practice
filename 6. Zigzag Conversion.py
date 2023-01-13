@@ -30,4 +30,4 @@
 # 1 <= s.length <= 1000
 # s consists of English letters (lower-case and upper-case), ',' and '.'.
 # 1 <= numRows <= 1000
-# first day of new course pobability: a lot of terms on probability
+# first day of new course pobability: a lot of terms on probability and not easy to understand
