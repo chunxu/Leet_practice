@@ -32,3 +32,30 @@
 # 1 <= numRows <= 1000
 # first day of new course pobability: a lot of terms on probability and not easy to understand - balls and bins - using a script to solve
 
+#solution 1
+import numpy as np
+bin = ['B', 'W']
+results = []
+trial = 100
+for i in range(trial):
+    bin_size = len(bin)
+    choice = np.random.randint(1, bin_size+1)
+    if bin[choice-1] == 'B':
+        bin.append('B')
+    else:
+        bin.append('W')
+    n = len(bin) - 1
+    print(bin)
+    print('Count of W = ', bin.count('W'))
+    print('N - 1 = ', n)
+    if 1 <= bin.count('W') <= n:
+        print('Pass')
+        results.append('Pass')
+    else:
+        print('Fail')
+        results.append('Fail')
+    print()
+print('----------- Outcome-------------------------')
+print('# of Fails = ', results.count('Fail'))
+print('# of Pass = ', results.count('Pass'))
+
