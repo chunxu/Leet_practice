@@ -31,3 +31,4 @@
 # s consists of English letters (lower-case and upper-case), ',' and '.'.
 # 1 <= numRows <= 1000
 # first day of new course pobability: a lot of terms on probability and not easy to understand -  continue with week 2
+# Happy New Year
