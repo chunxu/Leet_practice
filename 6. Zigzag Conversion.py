@@ -31,20 +31,30 @@
 # s consists of English letters (lower-case and upper-case), ',' and '.'.
 # 1 <= numRows <= 1000
 
+class Solution(object):
+    def convert(self, s, numRows):
+        if numRows == 1 or numRows >= len(s):
+            return s
+        rows = ["" for _ in range(numRows)]
+        index, step = 0, 1
+        for char in s:
+            rows[index] += char
+            if index == 0:
+                step = 1
+            elif index == numRows - 1:
+                step = -1
+            index += step
+        return "".join(rows)
 
-def convert(s, numRows):
-    if numRows == 1 or numRows >= len(s):
-        return s
-    
-    rows = ["" for _ in range(numRows)]
-    index, step = 0, 1
-    
-    for char in s:
-        rows[index] += char
-        if index == 0:
-            step = 1
-        elif index == numRows - 1:
-            step = -1
-        index += step
-    
-    return "".join(rows)
+# Explanation:
+
+# If the number of rows is 1 or greater than or equal to the length of the input string, the input string is returned as it is.
+# A list of empty strings, rows, is created to store the characters of each row in the zigzag pattern.
+# index is used to keep track of the current row and step is used to determine the direction of the movement (up or down) in the zigzag pattern.
+# For each character in the input string, it is added to the current row, represented by rows[index].
+# If the current row is 0, it means the movement direction should be down, so step is set to 1.
+# If the current row is the last row (numRows - 1), it means the movement direction should be up, so step is set to -1.
+# The value of index is updated by adding step to move to the next row in the zigzag pattern.
+# Finally, all the rows are joined into a single string and returned as the result.
+
+       
