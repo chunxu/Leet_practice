@@ -63,4 +63,40 @@ s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+
 
 
 ///
+class Solution(object):
+    def myAtoi(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+    
+        # Ignore leading whitespace
+        s = s.lstrip()
+
+        # Check if the number is negative or positive
+        sign = 1
+        if s and (s[0] == '-' or s[0] == '+'):
+            if s[0] == '-':
+                sign = -1
+            s = s[1:]
+
+        # Read in digits until the next non-digit character or the end of the input
+        digits = []
+        for c in s:
+            if c.isdigit():
+                digits.append(c)
+            else:
+                break
+
+        # Convert the digits into an integer
+        num = 0
+        for d in digits:
+            num = num * 10 + int(d)
+
+        # Apply the sign and clamp to the 32-bit integer range
+        num *= sign
+        num = max(num, -2**31)
+        num = min(num, 2**31 - 1)
+
+        return num
 
