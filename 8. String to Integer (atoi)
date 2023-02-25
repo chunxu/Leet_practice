@@ -100,12 +100,12 @@ class Solution(object):
 
         return num
 
-///
-This implementation first ignores any leading whitespace in the input string s. It then checks if the number is negative or positive by looking at the first character of the remaining string s. If the first character is '-', it sets the sign variable to -1, otherwise it assumes the number is positive and sets sign to 1. It then removes the sign character from s.
+# ///
+# This implementation first ignores any leading whitespace in the input string s. It then checks if the number is negative or positive by looking at the first character of the remaining string s. If the first character is '-', it sets the sign variable to -1, otherwise it assumes the number is positive and sets sign to 1. It then removes the sign character from s.
 
-Next, the implementation reads in digits from s until it encounters a non-digit character or the end of the string. It stores the digits in a list called digits. It then converts the digits into an integer by repeatedly multiplying by 10 and adding the next digit.
+# Next, the implementation reads in digits from s until it encounters a non-digit character or the end of the string. It stores the digits in a list called digits. It then converts the digits into an integer by repeatedly multiplying by 10 and adding the next digit.
 
-Finally, the implementation applies the sign to the integer and clamps it to the 32-bit integer range using the max and min functions. It returns the resulting integer.
+# Finally, the implementation applies the sign to the integer and clamps it to the 32-bit integer range using the max and min functions. It returns the resulting integer.
 
-Note that this implementation assumes that the input string s is a valid representation of a 32-bit signed integer. If s contains non-numeric characters that are not leading whitespace or sign characters, those characters are ignored. If s is empty or contains only whitespace, the function returns 0.
-///
+# Note that this implementation assumes that the input string s is a valid representation of a 32-bit signed integer. If s contains non-numeric characters that are not leading whitespace or sign characters, those characters are ignored. If s is empty or contains only whitespace, the function returns 0.
+# ///
