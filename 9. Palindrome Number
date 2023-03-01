@@ -31,3 +31,8 @@ class Solution(object):
         return str_x == str_x[::-1]
  
  
+# This implementation first checks if the input integer x is negative. Negative numbers cannot be palindromes because their reversal has a minus sign, so the function immediately returns False in this case.
+
+# For non-negative integers, the implementation converts the integer to a string using the str function. It then compares the string with its reverse, which is obtained using the [::-1] slice notation. If the two strings are equal, then the integer is a palindrome, and the function returns True. Otherwise, the integer is not a palindrome, and the function returns False.
+
+# Note that this implementation assumes that the input integer x fits within the range of a 32-bit integer.
