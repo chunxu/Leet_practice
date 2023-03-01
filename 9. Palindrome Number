@@ -17,3 +17,17 @@
 # Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
 
 # solution
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        if x < 0: # Negative numbers are not palindromes
+            return False
+
+        # Convert integer to string and compare with its reverse
+        str_x = str(x)
+        return str_x == str_x[::-1]
+ 
+ 
