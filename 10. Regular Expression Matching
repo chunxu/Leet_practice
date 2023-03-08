@@ -57,3 +57,24 @@ class Solution(object):
                     else:
                         dp[i][j] = dp[i][j-2]
         return dp[m][n]
+
+# To implement regular expression matching with support for '.' and '*', we can use dynamic programming approach.
+
+# Let dp[i][j] be a boolean value that represents if s[0:i] and p[0:j] match.
+
+# We can define the recursive formula as follows:
+
+# If p[j-1] != "*" and (s[i-1] == p[j-1] or p[j-1] == "."), then
+# dp[i][j] = dp[i-1][j-1]
+
+# If p[j-1] == "*", then either it matches zero preceding characters or it matches one or more preceding characters.
+
+# dp[i][j] = dp[i][j-2] or dp[i-1][j] if s[i-1] == p[j-2] or p[j-2] == "."
+
+# We need to handle the base cases as well:
+
+# dp[0][0] = true, s and p are both empty
+# dp[i][0] = false, p is empty and s is not
+# dp[0][j] = dp[0][j-2] if p[j-1] == "*", p only matches empty string
+
+
