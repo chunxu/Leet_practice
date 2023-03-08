@@ -77,4 +77,6 @@ class Solution(object):
 # dp[i][0] = false, p is empty and s is not
 # dp[0][j] = dp[0][j-2] if p[j-1] == "*", p only matches empty string
 
+# Time complexity: O(mn), where m and n are the lengths of the input strings s and p, respectively.
+# Space complexity: O(mn), for the dp table.
 
