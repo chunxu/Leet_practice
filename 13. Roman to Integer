@@ -18,3 +18,19 @@
 # Given a roman numeral, convert it to an integer.
 
 #solution
+class Solution(object):
+
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        ret = 0
+        ROMAN = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
+                 'C': 100, 'D': 500, 'M': 1000}
+        for i in range(0, len(s)):
+            ret = ret + ROMAN[s[i]]
+            if i + 1 < len(s) and ROMAN[s[i + 1]] > ROMAN[s[i]]:
+                ret = ret - 2 * (ROMAN[s[i]])  # important
+            #ret = ret + ROMAN[s[i]]
+        return ret
