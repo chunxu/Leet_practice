@@ -26,3 +26,38 @@
  
  
 #solution
+class Solution(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        n = len(nums)
+        nums.sort()  # sort the input array to help avoid duplicates
+        result = []
+
+        for i in range(n - 2):
+            # skip over duplicates in the first position
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+
+            # two-pointer search for the remaining two elements
+            j = i + 1
+            k = n - 1
+            while j < k:
+                s = nums[i] + nums[j] + nums[k]
+                if s == 0:
+                    result.append([nums[i], nums[j], nums[k]])
+                    # skip over duplicates in the second and third positions
+                    while j < k and nums[j] == nums[j+1]:
+                        j += 1
+                    while j < k and nums[k] == nums[k-1]:
+                        k -= 1
+                    j += 1
+                    k -= 1
+                elif s < 0:
+                    j += 1
+                else:
+                    k -= 1
+
+        return result
