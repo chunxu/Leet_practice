@@ -6,3 +6,37 @@
 
  # solution
  
+class Solution(object):
+    def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
+
+        if not digits:
+            return []
+
+        # create a dictionary to map each digit to its letters
+        digit_to_letters = {
+            '2': 'abc',
+            '3': 'def',
+            '4': 'ghi',
+            '5': 'jkl',
+            '6': 'mno',
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
+        }
+
+        # recursive helper function to build up the combinations
+        def build_combinations(digits, index, current, result):
+            if index == len(digits):
+                result.append(current)
+                return
+
+            for letter in digit_to_letters[digits[index]]:
+                build_combinations(digits, index + 1, current + letter, result)
+
+        result = []
+        build_combinations(digits, 0, '', result)
+        return result
