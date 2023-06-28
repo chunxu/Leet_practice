@@ -7,3 +7,25 @@
 # Every close bracket has a corresponding open bracket of the same type.
  
  
+class Solution(object):
+
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        if not s:
+            return False
+
+        s1 = '([{'
+        s2 = ')]}'
+        stack = []
+        for e in s:
+            if e in '([{':
+                stack.append(e)
+            else:
+                if stack and s1.index(stack[-1]) == s2.index(e):
+                    stack.pop()
+                else:
+                    return False
+        return not stack
